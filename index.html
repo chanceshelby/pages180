@@ -2,8 +2,8 @@
 .dropbtn {
   background-color: #fff;
   color: #000;
-  padding: 5px;
-  font-size: 14px;
+  padding: 10px;
+  font-size: 20px;
   border: none;
   border-radius: 6px;
 }
@@ -41,8 +41,8 @@
 .dropbtn2 {
     background-color: #fff;
     color: #000;
-    padding: 5px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 20px;
     border: none;
     border-radius: 6px;
     width: auto;
@@ -82,8 +82,8 @@
 .dropbtn3 {
   background-color: #fff;
   color: #000;
-  padding: 5px;
-  font-size: 14px;
+  padding: 10px;
+  font-size: 20px;
   border: none;
   border-radius: 6px;
   width: auto;
@@ -123,6 +123,7 @@
 <title>Button Coding</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
 <body>
 
 </div>
@@ -136,7 +137,9 @@
 html {
   height: 100%;
 }
-
+h1 {
+	font-family: "Lobster", sans-serif;
+}
 body {
   background: #6699cc;
   padding: 20px;
@@ -310,6 +313,11 @@ txt=prompt("Change the font color","Text");
 if(txt!=null)           
 AddTxt="<font color="+txt+">\r\n";  
 }
+if(Action==23){  
+txt=prompt("Change the background color","Text");      
+if(txt!=null)           
+AddTxt="<body bgcolor="+txt+">\r\n";  
+}
 if(Action==17){            
 AddTxt="</font>\r\n";  
 }
@@ -336,7 +344,7 @@ AddTxt="<style>"+txt+"</style>\r\n";
 if(Action==22){  
 txt=prompt("Small Text","Text");      
 if(txt!=null)           
-AddTxt="<small>"+txt+"</small>\r\n"; 
+AddTxt="<small>"+txt+"</small>"; 
 }
 if(Action==3){  
 txt=prompt("Text for the level 3 header.","Text");      
@@ -350,10 +358,10 @@ if(Action==12){
 AddTxt="</center>\r\n";  
 }
 if(Action==14){            
-AddTxt="<big>\r\n"; 
+AddTxt="<big>"; 
 }
 if(Action==15){            
-AddTxt="</big>\r\n"; 
+AddTxt="</big>"; 
 }
 if(Action==13) {  
 txt=prompt("Text to be underlined","Text");     
@@ -373,14 +381,14 @@ AddTxt="<i>"+txt+"</i>";
 if(Action==6) {  
 txt=prompt("Text will be a paragraph","Text");     
 if(txt!=null)           
-AddTxt="<p>"+txt+"</p>";        
+AddTxt="<p>"+txt+"</p>\r\n";        
 }
-if(Action==7) AddTxt="<br>\r\n";
+if(Action==7) AddTxt="<br>";
 if(Action==8) AddTxt="<hr>\r\n";
 if(Action==9) {  
 txt=prompt("URL for the link.","http://");      
 if(txt!=null){          
-AddTxt="<a href="+txt+">";              
+AddTxt="<a href="+txt+">\r\n";              
 txt=prompt("Text to be show for the link","Text");              
 AddTxt+=txt+"</a>\r\n";         
    }
@@ -417,7 +425,7 @@ form.Fav6Title.value="";
 </SCRIPT>
 
 <CENTER>
-	<br><br>
+	<h1 style="color:#fff;font-size:50px">Code-Clicker</h1>
 <TABLE border=2>
 <TR align=left><TD colspan=2>
 	<div class="window">
@@ -457,16 +465,17 @@ form.Fav6Title.value="";
 <div class="dropdown3" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);">
   <button class="dropbtn3">Page Styles</button>
   <div class="dropdown-content3">
+<input type="Button" value="Background Color" style="width:100%" onClick="AddText(hello,23);">
 <input type="button" value="Page Break" style="width:100%" onClick="AddText(hello,7);">
 <input type="button" value="Horizontal Line" style="width:100%" onClick="AddText(hello,8);">
 <input type="button" value="Add Link" style="width:100%" onClick="AddText(hello,9);">
 <input type="button" value="Add Graphic" style="width:100%"  onClick="AddText(hello,10);">
 <input type="button" value="Add Custom CSS" style="width:100%;background-color:#e3d824;" onClick="AddText(hello,21);">
-<input type="Button" value="Center" style="width:49%" onClick="AddText(this.form,11);">
+<input type="Button" value="Center" style="width:49%" onClick="AddText(hello,11);">
 <input type="Button" value="Closing Tag" style="width:49%" onClick="AddText(hello,12);">
   </div>
 </div>
-<input type="button" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);background-color: #46a33f;color: #fff;font-size: 14px;padding:5px;border: none;margin-left:50px;border: 2px solid #fff;" value="RUN" onClick="View(hello);">
+<input type="button" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);background-color: #46a33f;color: #fff;font-size: 20px;padding:8px;border: none;margin-left:50px;border: 1px solid #fff;" value="RUN" onClick="View(hello);">
 <br><br>
 </center>
 </TABLE>
