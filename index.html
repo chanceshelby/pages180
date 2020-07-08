@@ -1,0 +1,334 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+</a><script type="text/javascript">
+  <!--
+  if (screen.width <= 800) {
+    window.location = "m.html";
+  }
+  //-->
+</script>
+
+<style>* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #6699cc;
+  padding: 20px;
+  height: 100%;
+}
+
+.window {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: 1px solid #adadad;
+  max-width: 500px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+  margin: 0 auto;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+}
+.window:before {
+  content: '';
+  display: block;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  height: 20px;
+  text-align: center;
+  color: #505151;
+  font-size: 12px;
+  line-height: 20px;
+  vertical-align: middle;
+  border: 1px solid white;
+  border-left-color: #f3f3f3  ;
+  border-right-color: #f3f3f3;
+  border-bottom-color: #bdbdbd;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background: radial-gradient(7px at 14px 50%, #ff5e57 0px, #ff635a 5px, #fd5249 6px, rgba(255, 255, 255, 0) 7px), radial-gradient(7px at 34px 50%, #ffbd2e 0px, #ffc42f 5px, #fcb91b 6px, rgba(255, 255, 255, 0) 7px), radial-gradient(7px at 54px 50%, #00d52c 0px, #00d52c 5px, #00d52c 6px, rgba(255, 255, 255, 0) 7px), linear-gradient(to top, #cccccc 0%, #d6d6d6 1px, #ebebeb 100%);
+}
+.Text1 {
+  outline: none;
+  height:300px;
+  width:443px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  border:solid 1px #fff;
+  font-size: 14px;
+  resize: none;
+  overflow: auto;
+  color: radial-gradient(7px at 14px 50%, #ff5e57 0px, #ff635a 5px, #fd5249 6px, rgba(255, 255, 255, 0) 7px), radial-gradient(7px at 34px 50%, #ffbd2e 0px, #ffc42f 5px, #fcb91b 6px, rgba(255, 255, 255, 0) 7px), radial-gradient(7px at 54px 50%, #00d52c 0px, #00d52c 5px, #00d52c 6px, rgba(255, 255, 255, 0) 7px), linear-gradient(to top, #cccccc 0%, #d6d6d6 1px, #ebebeb 100%);;
+}
+#testLink {
+    border: 1px solid;
+    background: linear-gradient(to top, #cccccc 0%, #d6d6d6 1px, #ebebeb 100%);
+    padding: 7px 19px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+	 text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+	 box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+	 color: #505151;
+	 font-family:  -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;;
+	 
+  }
+  #menu{
+  position:absolute;
+  width:125px;
+  border:solid 1px #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  line-height:20px;
+  cursor:default;
+  visibility:hidden;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+ box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+  background: linear-gradient(to top, #cccccc 0%, #d6d6d6 1px, #ebebeb 100%);
+  }
+  #menuitems{
+  padding-left:15px;
+  padding-right:15px;
+  }
+  #menu:before {
+    content: '';
+    display: block;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    height: 20px;
+    text-align: center;
+    color: #505151;
+    font-size: 12px;
+    line-height: 20px;
+    vertical-align: middle;
+    border: 1px solid white;
+    border-left-color: #f3f3f3  ;
+    border-right-color: #f3f3f3;
+    border-bottom-color: #bdbdbd;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background: radial-gradient(7px at 14px 50%, #ff5e57 0px, #ff635a 5px, #fd5249 6px, rgba(255, 255, 255, 0) 7px), radial-gradient(7px at 34px 50%, #ffbd2e 0px, #ffc42f 5px, #fcb91b 6px, rgba(255, 255, 255, 0) 7px), radial-gradient(7px at 54px 50%, #00d52c 0px, #00d52c 5px, #00d52c 6px, rgba(255, 255, 255, 0) 7px), linear-gradient(to top, #cccccc 0%, #d6d6d6 1px, #ebebeb 100%);
+}
+table {
+	border: transparent;
+}
+</style>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+<!-- Begin
+function View(form) {
+msg=open("","DisplayWindow","status=1,scrollbars=1");
+msg.document.write(form.Text1.value);
+}
+function Generate(form) {
+var txt="<html><HEAD><TITLE>"+form.Name.value+"</TITLE></HEAD>\r\n";
+txt+=
+"<CENTER><h1><font color=red>"+form.Name.value+"</font></h1></CENTER><hr>\r\n";
+txt+="<body><font size=4>\r\n";
+if(form.Text1.value)    
+txt+=form.Text1.value+"\r\n";    if(form.Fav1URL.value||form.Fav2URL.value||form.Fav3URL.value||form.Fav4URL.value||form.Fav5URL.value||form.Fav6URL.value) {
+txt+="<hr><font>Some of my favorite links:<BR><ul>\r\n<LI><a href=http://javascriptsource.com>The JavaScript Source</a><BR>\r\n";
+if(form.Fav1URL.value)          
+txt+="<LI><a href="+form.Fav1URL.value+">"+form.Fav1Title.value+"</a><BR>\r\n";
+if(form.Fav2URL.value)          
+txt+="<LI><a href="+form.Fav2URL.value+">"+form.Fav2Title.value+"</a><BR>\r\n"; 
+if(form.Fav3URL.value)          
+txt+="<LI><a href="+form.Fav3URL.value+">"+form.Fav3Title.value+"</a><BR>\r\n"; 
+if(form.Fav4URL.value)          
+txt+="<LI><a href="+form.Fav4URL.value+">"+form.Fav4Title.value+"</a><BR>\r\n"; 
+if(form.Fav5URL.value)          
+txt+="<LI><a href="+form.Fav5URL.value+">"+form.Fav5Title.value+"</a><BR>\r\n"; 
+if(form.Fav6URL.value)          
+txt+="<LI><a href="+form.Fav6URL.value+">"+form.Fav6Title.value+"</a><BR>\r\n"; 
+txt+="</ul></font>";    
+}
+if(form.EMail.value){   
+txt+="<hr>Questions? Comments? E-Mail me:\r\n"; 
+txt+="<address><a href=mailto:"+form.EMail.value+">"+form.EMail.value+"</address>\r\n"; 
+}
+txt+="</font></body></html>";
+form.Text2.value=txt;
+}
+function AddText(form, Action){
+var AddTxt="";
+var txt="";
+if(Action==1){  
+txt=prompt("Text for the level 1 header.","Text");      
+if(txt!=null)           
+AddTxt="<h1>"+txt+"</h1>\r\n";  
+}
+if(Action==2){  
+txt=prompt("Text for the level 2 header.","Text");      
+if(txt!=null)           
+AddTxt="<h2>"+txt+"</h2>\r\n";  
+}
+if(Action==16){  
+txt=prompt("Change the font color","Text");      
+if(txt!=null)           
+AddTxt="<font color="+txt+">\r\n";  
+}
+if(Action==17){            
+AddTxt="</font>\r\n";  
+}
+if(Action==18){  
+txt=prompt("Text for the level 4 header.","Text");      
+if(txt!=null)           
+AddTxt="<h4>"+txt+"</h4>\r\n";  
+}
+if(Action==19){  
+txt=prompt("Text for the level 5 header.","Text");      
+if(txt!=null)           
+AddTxt="<h5>"+txt+"</h5>\r\n";  
+}
+if(Action==20){  
+txt=prompt("Text for the level 6 header.","Text");      
+if(txt!=null)           
+AddTxt="<h6>"+txt+"</h6>\r\n";
+}
+if(Action==21){  
+txt=prompt("Custom CSS","Text");      
+if(txt!=null)           
+AddTxt="<style>"+txt+"</style>\r\n"; 
+}
+if(Action==3){  
+txt=prompt("Text for the level 3 header.","Text");      
+if(txt!=null)           
+AddTxt="<h3>"+txt+"</h3>\r\n";  
+}
+if(Action==11){            
+AddTxt="<center>\r\n";  
+}
+if(Action==12){            
+AddTxt="</center>\r\n";  
+}
+if(Action==14){            
+AddTxt="<big>\r\n"; 
+}
+if(Action==15){            
+AddTxt="</big>\r\n"; 
+}
+if(Action==13) {  
+txt=prompt("Text to be underlined","Text");     
+if(txt!=null)           
+AddTxt="<u>"+txt+"</u>";   
+}
+if(Action==4) {  
+txt=prompt("Text to be made BOLD.","Text");     
+if(txt!=null)           
+AddTxt="<b>"+txt+"</b>";        
+}
+if(Action==5) {  
+txt=prompt("Text to be italicized","Text");     
+if(txt!=null)           
+AddTxt="<i>"+txt+"</i>";  
+}
+if(Action==6) {  
+txt=prompt("Text will be a paragraph","Text");     
+if(txt!=null)           
+AddTxt="<p>"+txt+"</p>";        
+}
+if(Action==7) AddTxt="<br>\r\n";
+if(Action==8) AddTxt="<hr>\r\n";
+if(Action==9) {  
+txt=prompt("URL for the link.","http://");      
+if(txt!=null){          
+AddTxt="<a href="+txt+">";              
+txt=prompt("Text to be show for the link","Text");              
+AddTxt+=txt+"</a>\r\n";         
+   }
+}
+if(Action==10) { 
+txt=prompt("URL for graphic","URL");    
+if(txt!=null)           
+AddTxt="<img src="+txt+">\r\n"; 
+}
+form.Text1.value+=AddTxt;
+}
+function ResetPage(form) {
+if(confirm("Reset the page?")) { 
+form.Text1.value="";    
+form.Text2.value="";    
+form.Name.value="";     
+form.EMail.value="";    
+form.Fav1URL.value="";  
+form.Fav1Title.value="";        
+form.Fav2URL.value="";  
+form.Fav2Title.value="";        
+form.Fav3URL.value="";  
+form.Fav3Title.value="";        
+form.Fav4URL.value="";  
+form.Fav4Title.value="";        
+form.Fav5URL.value="";  
+form.Fav5Title.value="";        
+form.Fav6URL.value="";  
+form.Fav6Title.value="";        
+   }
+}
+
+// End -->
+</SCRIPT>
+
+<CENTER>
+	<br><br style="line-height:2px">
+	<small style="font-family:arial;color:#fff;margin-right:950px;font-size:30px;">Button<font color="#e1e1e1">Coding</small></font>
+
+	<div style="margin-top:-30px">
+<FORM ACTION="">
+<TABLE border=2>
+<TR align=left><TD colspan=2>
+<input type="Button" value="Header1" onClick="AddText(this.form,1);">
+<input type="Button" value="Header2" onClick="AddText(this.form,2);">
+<input type="Button" value="Header3" onClick="AddText(this.form,3);">
+<input type="Button" value="Header4" onClick="AddText(this.form,18);">
+<input type="Button" value="Header5" onClick="AddText(this.form,19);">
+<input type="Button" value="Header6" onClick="AddText(this.form,20);">
+<input type="button" value="Paragraph" onClick="AddText(this.form,6);">
+<br><hr>
+<input type="Button" value="Center" onClick="AddText(this.form,11);">
+<input type="Button" value="End Center" onClick="AddText(this.form,12);">
+<input type="button" value="Break" onClick="AddText(this.form,7);">
+<input type="button" value="Line" onClick="AddText(this.form,8);">
+<br><hr>
+<input type="button" value="Bold" onClick="AddText(this.form,4);">
+<input type="button" value="Italic" onClick="AddText(this.form,5);">
+<input type="button" value="Underlined" onClick="AddText(this.form,13);">
+<input type="button" value="Big" onClick="AddText(this.form,14);">
+<input type="button" value="End Big" onClick="AddText(this.form,15);">
+<input type="button" value="Font color" onClick="AddText(this.form,16);">
+<input type="button" value="End Font color" onClick="AddText(this.form,17);">
+<br><hr>
+<input type="button" value="Link" onClick="AddText(this.form,9);">
+<input type="button" value="Graphic" onClick="AddText(this.form,10);">
+<input type="button" value="Custom CSS" onClick="AddText(this.form,21);">
+<BR><br>
+<br>
+
+<div class="window">
+<textarea name="Text1" class="Text1" style="border: transparent;"></textarea>
+</div>
+<br><br>
+</center>
+<TR align=left><TD colspan=2><input type="button" value="View" onClick="View(this.form);">
+</TABLE>
+</FORM>
+</CENTER>
+</div>
