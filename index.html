@@ -1,3 +1,123 @@
+<style>
+.dropbtn {
+  background-color: #fff;
+  color: #000;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ccc;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 6px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ccc;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #ccc;}
+</style>
+
+<style>
+.dropbtn2 {
+    background-color: #fff;
+    color: #000;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    width: auto;
+}
+
+.dropdown2 {
+    position: relative;
+    display: inline-block;
+    width: auto;
+}
+
+.dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: #ccc;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 6px;
+}
+
+.dropdown-content2 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-conten2t a:hover {background-color: #ccc;}
+
+.dropdown2:hover .dropdown-content2 {display: block;}
+
+.dropdown2:hover .dropbtn2 {background-color: #ccc;}
+</style>
+
+<style>
+.dropbtn3 {
+  background-color: #fff;
+  color: #000;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  width: auto;
+}
+
+.dropdown3 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content3 {
+  display: none;
+  position: absolute;
+  background-color: #ccc;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 6px;
+}
+
+.dropdown-content3 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content3 a:hover {background-color: #ccc;}
+
+.dropdown3:hover .dropdown-content3 {display: block;}
+
+.dropdown3:hover .dropbtn3 {background-color: #ccc;}
+</style>
+
 <!DOCTYPE html>
 <html>
 <title>Button Coding</title>
@@ -24,7 +144,6 @@ body {
 }
 input {
 	border-radius: 3px;
-	padding: -1px;
 }
 .window {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
@@ -58,12 +177,12 @@ input {
   border-bottom-color: #bdbdbd;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  background: radial-gradient(7px at 14px 50%, #ff5e57 0px, #ff635a 5px, #fd5249 6px, rgba(255, 255, 255, 0) 7px), radial-gradient(7px at 34px 50%, #ffbd2e 0px, #ffc42f 5px, #fcb91b 6px, rgba(255, 255, 255, 0) 7px), radial-gradient(7px at 54px 50%, #00d52c 0px, #00d52c 5px, #00d52c 6px, rgba(255, 255, 255, 0) 7px), linear-gradient(to top, #cccccc 0%, #d6d6d6 1px, #ebebeb 100%);
+  background:  linear-gradient(to top, #cccccc 0%, #d6d6d6 1px, #ebebeb 100%);
 }
 .Text1 {
   outline: none;
-  height:500px;
-  width:600px;
+  height:300px;
+  width:100%;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   border:solid 1px #fff;
   font-size: 14px;
@@ -214,6 +333,11 @@ txt=prompt("Custom CSS","Text");
 if(txt!=null)           
 AddTxt="<style>"+txt+"</style>\r\n"; 
 }
+if(Action==22){  
+txt=prompt("Small Text","Text");      
+if(txt!=null)           
+AddTxt="<small>"+txt+"</small>\r\n"; 
+}
 if(Action==3){  
 txt=prompt("Text for the level 3 header.","Text");      
 if(txt!=null)           
@@ -293,44 +417,56 @@ form.Fav6Title.value="";
 </SCRIPT>
 
 <CENTER>
-<small style="font-family:arial;color:#fff;margin-right:950px;font-size:35px;">Button<font color="#e1e1e1">Coding</small></font>
-	<div style="margin-top:-40px">
+	<br><br>
 <FORM ACTION="">
 <TABLE border=2>
 <TR align=left><TD colspan=2>
-<input type="Button" value="Header1" onClick="AddText(this.form,1);">
-<input type="Button" value="Header2" onClick="AddText(this.form,2);">
-<input type="Button" value="Header3" onClick="AddText(this.form,3);">
-<input type="Button" value="Header4" onClick="AddText(this.form,18);">
-<input type="Button" value="Header5" onClick="AddText(this.form,19);">
-<input type="Button" value="Header6" onClick="AddText(this.form,20);">
-<input type="button" value="Paragraph" onClick="AddText(this.form,6);">
-<br><hr>
-<input type="Button" value="Center" onClick="AddText(this.form,11);">
-<input type="Button" value="End Center" onClick="AddText(this.form,12);">
-<input type="button" value="Break" onClick="AddText(this.form,7);">
-<input type="button" value="Line" onClick="AddText(this.form,8);">
-<br><hr>
-<input type="button" value="Bold" onClick="AddText(this.form,4);">
-<input type="button" value="Italic" onClick="AddText(this.form,5);">
-<input type="button" value="Underlined" onClick="AddText(this.form,13);">
-<input type="button" value="Big" onClick="AddText(this.form,14);">
-<input type="button" value="End Big" onClick="AddText(this.form,15);">
-<input type="button" value="Font color" onClick="AddText(this.form,16);">
-<input type="button" value="End Font color" onClick="AddText(this.form,17);">
-<br><hr>
-<input type="button" value="Link" onClick="AddText(this.form,9);">
-<input type="button" value="Graphic" onClick="AddText(this.form,10);">
-<input type="button" value="Custom CSS" onClick="AddText(this.form,21);">
-<BR><br>
-<br>
+	<div class="window">
+	<textarea name="Text1" class="Text1" style="border: transparent;"></textarea>
+	</div>
+	<br><br>
+	<div class="dropdown" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);">
+	  <button class="dropbtn">Font Sizes</button>
+	  <div class="dropdown-content">
+<input type="Button" value="Header1 - 32px" style="width:100%" onClick="AddText(this.form,1);">
+<input type="Button" value="Header2 - 24px" style="width:100%" onClick="AddText(this.form,2);">
+<input type="Button" value="Header3 - 18px" style="width:100%" onClick="AddText(this.form,3);">
+<input type="Button" value="Header4 - 16px" style="width:100%" onClick="AddText(this.form,18);">
+<input type="Button" value="Header5 - 13px" style="width:100%" onClick="AddText(this.form,19);">
+<input type="Button" value="Header6 - 10px" style="width:100%" onClick="AddText(this.form,20);">
+<input type="button" value="Paragraph - 16px" style="width:100%" onClick="AddText(this.form,6);">
+<input type="button" value="Small" style="width:100%" onClick="AddText(this.form,22);">
+	  </div>
+	</div>
 
-<div class="window">
-<textarea name="Text1" class="Text1" style="border: transparent;"></textarea>
+<div class="dropdown2" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);">
+  <button class="dropbtn2">Font Styles</button>
+  <div class="dropdown-content2">
+<input type="button" value="Bold Text" style="width:100%" onClick="AddText(this.form,4);">
+<input type="button" value="Italic Text" style="width:100%" onClick="AddText(this.form,5);">
+<input type="button" value="Underlined Text" style="width:100%" onClick="AddText(this.form,13);">
+<input type="button" value="Enlarge Text" style="width:49%" onClick="AddText(this.form,14);"> 
+<input type="button" value="Closing tag" style="width:49%" onClick="AddText(this.form,15);">
+<input type="button" value="Font color" style="width:49%" onClick="AddText(this.form,16);"> 
+<input type="button" value="Closing Tag" style="width:49%;" onClick="AddText(this.form,17);">
+  </div>
 </div>
+
+<div class="dropdown3" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);">
+  <button class="dropbtn3">Page Styles</button>
+  <div class="dropdown-content3">
+<input type="button" value="Page Break" style="width:100%" onClick="AddText(this.form,7);">
+<input type="button" value="Horizontal Line" style="width:100%" onClick="AddText(this.form,8);">
+<input type="button" value="Add Link" style="width:100%" onClick="AddText(this.form,9);">
+<input type="button" value="Add Graphic" style="width:100%"  onClick="AddText(this.form,10);">
+<input type="button" value="Add Custom CSS" style="width:100%;background-color:#e3d824;" onClick="AddText(this.form,21);">
+<input type="Button" value="Center" style="width:49%" onClick="AddText(this.form,11);">
+<input type="Button" value="Closing Tag" style="width:49%" onClick="AddText(this.form,12);">
+  </div>
+</div>
+<input type="button" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);background-color: #46a33f;color: #fff;font-size: 16px;padding:5px;border: none;margin-left:50px;border: 2px solid #fff;" value="RUN" onClick="View(this.form);">
 <br><br>
 </center>
-<TR align=left><TD colspan=2><input type="button" value="View" onClick="View(this.form);">
 </TABLE>
 </FORM>
 </CENTER>
