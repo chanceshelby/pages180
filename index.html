@@ -2,8 +2,8 @@
 .dropbtn {
   background-color: #fff;
   color: #000;
-  padding: 16px;
-  font-size: 16px;
+  padding: 5px;
+  font-size: 14px;
   border: none;
   border-radius: 6px;
 }
@@ -41,8 +41,8 @@
 .dropbtn2 {
     background-color: #fff;
     color: #000;
-    padding: 16px;
-    font-size: 16px;
+    padding: 5px;
+    font-size: 14px;
     border: none;
     border-radius: 6px;
     width: auto;
@@ -82,8 +82,8 @@
 .dropbtn3 {
   background-color: #fff;
   color: #000;
-  padding: 16px;
-  font-size: 16px;
+  padding: 5px;
+  font-size: 14px;
   border: none;
   border-radius: 6px;
   width: auto;
@@ -418,53 +418,55 @@ form.Fav6Title.value="";
 
 <CENTER>
 	<br><br>
-<FORM ACTION="">
 <TABLE border=2>
 <TR align=left><TD colspan=2>
 	<div class="window">
+			<form id="hello" action="">
 	<textarea name="Text1" class="Text1" style="border: transparent;"></textarea>
+</form>
 	</div>
 	<br><br>
 	<div class="dropdown" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);">
 	  <button class="dropbtn">Font Sizes</button>
 	  <div class="dropdown-content">
-<input type="Button" value="Header1 - 32px" style="width:100%" onClick="AddText(this.form,1);">
-<input type="Button" value="Header2 - 24px" style="width:100%" onClick="AddText(this.form,2);">
-<input type="Button" value="Header3 - 18px" style="width:100%" onClick="AddText(this.form,3);">
-<input type="Button" value="Header4 - 16px" style="width:100%" onClick="AddText(this.form,18);">
-<input type="Button" value="Header5 - 13px" style="width:100%" onClick="AddText(this.form,19);">
-<input type="Button" value="Header6 - 10px" style="width:100%" onClick="AddText(this.form,20);">
-<input type="button" value="Paragraph - 16px" style="width:100%" onClick="AddText(this.form,6);">
-<input type="button" value="Small" style="width:100%" onClick="AddText(this.form,22);">
+		
+<input type="Button" value="Header1 - 32px" style="width:100%" onClick="AddText(hello,1);">
+<input type="Button" value="Header2 - 24px" style="width:100%" onClick="AddText(hello,2);">
+<input type="Button" value="Header3 - 18px" style="width:100%" onClick="AddText(hello,3);">
+<input type="Button" value="Header4 - 16px" style="width:100%" onClick="AddText(hello,18);">
+<input type="Button" value="Header5 - 13px" style="width:100%" onClick="AddText(hello,19);">
+<input type="Button" value="Header6 - 10px" style="width:100%" onClick="AddText(hello,20);">
+<input type="button" value="Paragraph - 16px" style="width:100%" onClick="AddText(hello,6);">
+<input type="button" value="Small" style="width:100%" onClick="AddText(hello,22);">
 	  </div>
 	</div>
 
 <div class="dropdown2" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);">
   <button class="dropbtn2">Font Styles</button>
   <div class="dropdown-content2">
-<input type="button" value="Bold Text" style="width:100%" onClick="AddText(this.form,4);">
-<input type="button" value="Italic Text" style="width:100%" onClick="AddText(this.form,5);">
-<input type="button" value="Underlined Text" style="width:100%" onClick="AddText(this.form,13);">
-<input type="button" value="Enlarge Text" style="width:49%" onClick="AddText(this.form,14);"> 
-<input type="button" value="Closing tag" style="width:49%" onClick="AddText(this.form,15);">
-<input type="button" value="Font color" style="width:49%" onClick="AddText(this.form,16);"> 
-<input type="button" value="Closing Tag" style="width:49%;" onClick="AddText(this.form,17);">
+<input type="button" value="Bold Text" style="width:100%" onClick="AddText(hello,4);">
+<input type="button" value="Italic Text" style="width:100%" onClick="AddText(hello,5);">
+<input type="button" value="Underlined Text" style="width:100%" onClick="AddText(hello,13);">
+<input type="button" value="Enlarge Text" style="width:49%" onClick="AddText(hello,14);"> 
+<input type="button" value="Closing tag" style="width:49%" onClick="AddText(hello,15);">
+<input type="button" value="Font color" style="width:49%" onClick="AddText(hello,16);"> 
+<input type="button" value="Closing Tag" style="width:49%;" onClick="AddText(hello,17);">
   </div>
 </div>
 
 <div class="dropdown3" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);">
   <button class="dropbtn3">Page Styles</button>
   <div class="dropdown-content3">
-<input type="button" value="Page Break" style="width:100%" onClick="AddText(this.form,7);">
-<input type="button" value="Horizontal Line" style="width:100%" onClick="AddText(this.form,8);">
-<input type="button" value="Add Link" style="width:100%" onClick="AddText(this.form,9);">
-<input type="button" value="Add Graphic" style="width:100%"  onClick="AddText(this.form,10);">
-<input type="button" value="Add Custom CSS" style="width:100%;background-color:#e3d824;" onClick="AddText(this.form,21);">
+<input type="button" value="Page Break" style="width:100%" onClick="AddText(hello,7);">
+<input type="button" value="Horizontal Line" style="width:100%" onClick="AddText(hello,8);">
+<input type="button" value="Add Link" style="width:100%" onClick="AddText(hello,9);">
+<input type="button" value="Add Graphic" style="width:100%"  onClick="AddText(hello,10);">
+<input type="button" value="Add Custom CSS" style="width:100%;background-color:#e3d824;" onClick="AddText(hello,21);">
 <input type="Button" value="Center" style="width:49%" onClick="AddText(this.form,11);">
-<input type="Button" value="Closing Tag" style="width:49%" onClick="AddText(this.form,12);">
+<input type="Button" value="Closing Tag" style="width:49%" onClick="AddText(hello,12);">
   </div>
 </div>
-<input type="button" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);background-color: #46a33f;color: #fff;font-size: 16px;padding:5px;border: none;margin-left:50px;border: 2px solid #fff;" value="RUN" onClick="View(this.form);">
+<input type="button" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);background-color: #46a33f;color: #fff;font-size: 14px;padding:5px;border: none;margin-left:50px;border: 2px solid #fff;" value="RUN" onClick="View(hello);">
 <br><br>
 </center>
 </TABLE>
