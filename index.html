@@ -344,6 +344,36 @@ txt=prompt("Text to be show for the link","Text");
 AddTxt+=txt+"</a>\r\n";         
    }
 }
+if(Action==51) {  
+txt=prompt("Shape width (with px)","Size");      
+if(txt!=null){          
+AddTxt="<style>.square {\nwidth: "+txt+";\nheight: ";   
+txt=prompt("Shape height","Text");          
+AddTxt+=txt+";\nbackground-color: "          
+txt=prompt("Select color","Text");              
+AddTxt+=txt+";\n}\n</style>\r\n<div class='square'></div>\r\n\n";         
+   }
+}
+if(Action==52) {  
+txt=prompt("Shape width (with px)","Size");      
+if(txt!=null){          
+AddTxt="<style>.circle {\nwidth: "+txt+";\nheight: ";   
+txt=prompt("Shape height","Text");          
+AddTxt+=txt+";\nbackground-color: "          
+txt=prompt("Select color","Text");              
+AddTxt+=txt+";\nborder-radius: 50%;\n}\n</style>\r\n<div class='circle'></div>\r\n\n";         
+   }
+}
+if(Action==53) {  
+txt=prompt("Shape width (with px)","Size");      
+if(txt!=null){          
+AddTxt="<style>.triangle {\nwidth: "+txt+";\nheight: ";   
+txt=prompt("Shape height","Text");          
+AddTxt+=txt+";\nborder-bottom: 50px solid "          
+txt=prompt("Select color","Text");              
+AddTxt+=txt+";\nborder-left: 25px solid transparent;\nborder-right: 25px solid transparent;\n}\n</style>\r\n<div class='triangle'></div>\r\n\n";         
+   }
+}
 if(Action==10) { 
 txt=prompt("URL for graphic","URL");    
 if(txt!=null)           
@@ -571,6 +601,7 @@ Media<br>
 			      </button>
 			      <div class="dropdown-content">
 Table Attributes<br>
+<input type="button" value="Add Table Heading" style="width:100%" onClick="AddText(hello,51);">
 <input type="button" value="Add Table Heading" style="width:100%" onClick="AddText(hello,33);">
 <input type="button" value="Add Table Data" style="width:100%" onClick="AddText(hello,34);">
 <input type="button" value="Start Table" style="width:48%" onClick="AddText(hello,29);">
@@ -585,6 +616,18 @@ Table Attributes<br>
 <input type="button" value="End Un List" style="width:48%" onClick="AddText(hello,25);">
 			      </div></div>
 			    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+				
+			    <div class="dropdown">
+			      <button class="dropbtn" style="margin-top:40px">Shapes 
+			        <i class="fa fa-caret-down"></i>
+			      </button>
+			      <div class="dropdown-content">
+Shapes<br>
+<input type="button" value="Square" style="width:100%" onClick="AddText(hello,51);">
+<input type="button" value="Circle" style="width:100%" onClick="AddText(hello,52);">
+<input type="button" value="Triangle" style="width:100%" onClick="AddText(hello,53);">
+			      </div></div>
+			    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 
 				<a><input type="button" style="border: #f8f8f8;background-color:#f8f8f8"><img src="save.png" alt="save code" style="margin-left:-15px;margin-top:40px;" width="35px"id="testLink" value="SAVE"/></a>
 				<a><input type="button" style="border: #f8f8f8;background-color:#f8f8f8"><img src="run.png" alt="run code" style="margin-left:-10px;margin-top:40px;" width="43px" value="RUN" onClick="View(hello);"></a>
@@ -594,14 +637,7 @@ Table Attributes<br>
 <div class="paper">
     <div class="paper-content">
 			<form id="hello" action="">
-	<textarea name="Text1" id="textareaCode" class="Text1" style="font-family:Arial;height:480px"><html>
-<body>
-
-<h1>Learn to build websites easy!</h1>
-<p>Start with Sheet365.</p>
-
-</body>
-</html></textarea>
+	<textarea name="Text1" id="textareaCode" class="Text1" style="font-family:Arial;height:480px"></textarea>
 	
 </form>
 
