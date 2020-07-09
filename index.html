@@ -22,36 +22,80 @@ h1 {
 	font-family: "Lobster", sans-serif;
 }
 body {
-  background: #fafbfc;
+  background: #464646;
 }
 input {
 	border: 1px solid #000;
 	background-color: #fff;
 	color:#000;
 	cursor: pointer;
+	margin: 1px
 }
 .window {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   border: 2px solid #686868;
-  margin: 0 auto;
   width:1350px;
-  height:480px;
 }
 .window:before {
 }
 .Text1 {
-	padding-left:43px;
-    background-image: url("sheet3.jpg");
-    width: 100%;
-    height:100%;
-  outline: none;
-  height:400px;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-  border:solid 1px #fff;
-  font-size: 17px;
-  resize: none;
-  overflow: auto;
-  color: radial-gradient(7px at 14px 50%, #ff5e57 0px, #ff635a 5px, #fd5249 6px, rgba(255, 255, 255, 0) 7px), radial-gradient(7px at 34px 50%, #ffbd2e 0px, #ffc42f 5px, #fcb91b 6px, rgba(255, 255, 255, 0) 7px), radial-gradient(7px at 54px 50%, #00d52c 0px, #00d52c 5px, #00d52c 6px, rgba(255, 255, 255, 0) 7px), linear-gradient(to top, #cccccc 0%, #d6d6d6 1px, #ebebeb 100%);;
+	}
+	.paper {
+	    position: relative;
+	    width: 90%;
+	    max-width: 800px;
+	    min-width: 400px;
+	    height: 500px;
+	    margin: 0 auto;
+	    background: #fff;
+	    border-radius: 10px;
+	    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+	    overflow: hidden;
+	}
+	/*.paper:before {
+	    content: '';
+	    position: absolute;
+	    top: 0; bottom: 0; left: 0;
+	    width: 40px;
+	    background-size: 30px 30px;
+	    border-right: 3px solid #000;
+	    box-sizing: border-box;
+	}
+	*/
+
+	.paper-content {
+	    position: absolute;
+	    top: 30px; right: 0; bottom: 30px; left: 0px;
+	    background: linear-gradient(transparent, transparent 28px, #343434 28px);
+	    background-size: 30px 30px;
+	}
+
+	.paper-content textarea {
+	    width: 100%;
+	    max-width: 100%;
+	    height: 100%;
+	    max-height: 100%;
+	    line-height: 30px;
+	    padding: 0 10px;
+	    border: 0;
+	    outline: 0;
+	    background: transparent;
+	    color: mediumblue;
+	    font-family: arial;
+	    font-size: 18px;
+	    box-sizing: border-box;
+	    z-index: 1;
+	}
+
+	footer {
+	    margin-top: 30px;
+	    text-align: center;
+	    font-size: 12px;
+	    color: rgba(0,0,0,.6);
+	}
+	footer a {
+	    color: rgba(255,255,255,.8);
+	}
 }
   #menu{
   position:absolute;
@@ -267,6 +311,9 @@ AddTxt="<font face='impact'>\r\n";
 if(Action==49){     
 AddTxt="<font face='courier'>\r\n";  
 }
+if(Action==50){     
+AddTxt="<font face='applegothic'>\r\n";  
+}
 if(Action==26){  
 txt=prompt("Text for the list.","Text");      
 if(txt!=null)           
@@ -333,8 +380,8 @@ body {margin:0;font-family:Arial}
 
 .topnav {
   overflow: hidden;
-  background-color: #fff;
-  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
+  background-color: #f8f8f8;
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .topnav a {
@@ -375,11 +422,13 @@ body {margin:0;font-family:Arial}
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #ddd;
+  background-color: #d8dadd;
   min-width: 160px;
   width:300px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  padding:5px;
+  border: 1px solid #000;
 }
 
 .dropdown-content a {
@@ -437,23 +486,23 @@ body {margin:0;font-family:Arial}
 </style>
 <div class="topnav" id="myTopnav" style="margin-top:-10px">
 		<div class="dropdown">
-			<button class="dropbtn"><img style="width:70px;margin-left:17px" src="logo6.jpg">
+			<button class="dropbtn"><img style="width:100px;margin-left:5px" src="final_logo.png">
 		</div>
   <div class="dropdown">
-    <button class="dropbtn" style="margin-top:40px">HTML Elements 
+    <button class="dropbtn" style="margin-top:40px;margin-left:-12px">HTML Elements 
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
 	Page Elements<br>
-	<input type="Button" value="Starting HTML Tag" style="width:49%" onClick="AddText(hello,35);">
-	<input type="Button" value="Closing Tag" style="width:49%" onClick="AddText(hello,36);">
-	<input type="Button" value="Declare Header" style="width:49%" onClick="AddText(hello,38);">
-    <input type="Button" value="Closing Tag" style="width:49%" onClick="AddText(hello,39);">
-	<input type="Button" value="Declare Body" style="width:49%" onClick="AddText(hello,40);">
-    <input type="Button" value="Closing Tag" style="width:49%" onClick="AddText(hello,41);">
-	<input type="Button" value="Decalre Footer" style="width:49%" onClick="AddText(hello,42);">
-    <input type="Button" value="Closing Tag" style="width:49%" onClick="AddText(hello,43);">
-	<input type="Button" value="Title" style="width:100%" onClick="AddText(hello,37);">
+	<input type="Button" value="Starting HTML Tag" style="width:48%;" onClick="AddText(hello,35);">
+	<input type="Button" value="Closing Tag" style="width:48%;" onClick="AddText(hello,36);">
+	<input type="Button" value="Declare Header" style="width:48%;" onClick="AddText(hello,38);">
+    <input type="Button" value="Closing Tag" style="width:48%;" onClick="AddText(hello,39);">
+	<input type="Button" value="Declare Body" style="width:48%;" onClick="AddText(hello,40);">
+    <input type="Button" value="Closing Tag" style="width:48%;" onClick="AddText(hello,41);">
+	<input type="Button" value="Decalre Footer" style="width:48%;" onClick="AddText(hello,42);">
+    <input type="Button" value="Closing Tag" style="width:48%;" onClick="AddText(hello,43);">
+	<input type="Button" value="Title" style="width:100%;" onClick="AddText(hello,37);">
     </div></div>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 
@@ -481,19 +530,20 @@ Headings<br>
       </button>
       <div class="dropdown-content">
 Fonts
+<input type="button" value="Apple Gothic" style="font-family:applegothic;width:100%" onClick="AddText(hello,50);">
 <input type="button" style="font-family:arial;width:100%" value="Arial" onClick="AddText(hello,45);">
-<input type="button" value="Georgia" style="font-family:georgia;width:100%" onClick="AddText(hello,46);">
-<input type="button" value="Verdana" style="font-family:verdana;width:100%" onClick="AddText(hello,47);">
-<input type="button" value="Impact" style="font-family:impact;width:100%" onClick="AddText(hello,48);">
 <input type="button" value="Courier" style="font-family:courier;width:100%" onClick="AddText(hello,49);">
+<input type="button" value="Georgia" style="font-family:georgia;width:100%" onClick="AddText(hello,46);">
+<input type="button" value="Impact" style="font-family:impact;width:100%" onClick="AddText(hello,48);">
+<input type="button" value="Verdana" style="font-family:verdana;width:100%" onClick="AddText(hello,47);">
 <br>Decorations
 <input type="button" value="Bold Text" style="width:100%" onClick="AddText(hello,4);">
 <input type="button" value="Italic Text" style="width:100%" onClick="AddText(hello,5);">
 <input type="button" value="Underlined Text" style="width:100%" onClick="AddText(hello,13);">
-<input type="button" value="Enlarge Text" style="width:49%" onClick="AddText(hello,14);"> 
-<input type="button" value="Closing tag" style="width:49%" onClick="AddText(hello,15);">
-<input type="button" value="Font color" style="width:49%" onClick="AddText(hello,16);"> 
-<input type="button" value="Closing Tag" style="width:49%;" onClick="AddText(hello,17);">
+<input type="button" value="Enlarge Text" style="width:48%" onClick="AddText(hello,14);"> 
+<input type="button" value="Closing tag" style="width:48%" onClick="AddText(hello,15);">
+<input type="button" value="Font color" style="width:48%" onClick="AddText(hello,16);"> 
+<input type="button" value="Closing Tag" style="width:48%;" onClick="AddText(hello,17);">
       </div></div>
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 	
@@ -506,9 +556,9 @@ Fonts
 <input type="Button" value="Background Color" style="width:100%" onClick="AddText(hello,23);">
 <input type="button" value="Page Break" style="width:100%" onClick="AddText(hello,7);">
 <input type="button" value="Horizontal Line" style="width:100%" onClick="AddText(hello,8);">
-<input type="button" value="Add Custom CSS" style="width:100%;background-color:#e3d824;" onClick="AddText(hello,21);">
-<input type="Button" value="Center" style="width:49%" onClick="AddText(hello,11);">
-<input type="Button" value="Closing Tag" style="width:49%" onClick="AddText(hello,12);">
+<input type="button" value="Add Custom CSS" style="width:100%;background-color:#f89635;" onClick="AddText(hello,21);">
+<input type="Button" value="Center" style="width:48%" onClick="AddText(hello,11);">
+<input type="Button" value="Closing Tag" style="width:48%" onClick="AddText(hello,12);">
 Media<br>
 <input type="button" value="Add Link" style="width:100%" onClick="AddText(hello,9);">
 <input type="button" value="Add Graphic" style="width:100%"  onClick="AddText(hello,10);">
@@ -523,27 +573,28 @@ Media<br>
 Table Attributes<br>
 <input type="button" value="Add Table Heading" style="width:100%" onClick="AddText(hello,33);">
 <input type="button" value="Add Table Data" style="width:100%" onClick="AddText(hello,34);">
-<input type="button" value="Start Table" style="width:49%" onClick="AddText(hello,29);">
-<input type="button" value="End Table" style="width:49%" onClick="AddText(hello,30);">
-<input type="button" value="Start Row" style="width:49%" onClick="AddText(hello,31);">
-<input type="button" value="End Row" style="width:49%" onClick="AddText(hello,32);">
+<input type="button" value="Start Table" style="width:48%" onClick="AddText(hello,29);">
+<input type="button" value="End Table" style="width:48%" onClick="AddText(hello,30);">
+<input type="button" value="Start Row" style="width:48%" onClick="AddText(hello,31);">
+<input type="button" value="End Row" style="width:48%" onClick="AddText(hello,32);">
 	  List Attributes<br>
 <input type="button" value="Add list item" style="width:100%" onClick="AddText(hello,26);">
-<input type="Button" value="Start Ordered List" style="width:49%" onClick="AddText(hello,27);">
-<input type="button" value="End Ordered List" style="width:49%" onClick="AddText(hello,28);">
-<input type="button" value="Start Unordered List" style="width:49%" onClick="AddText(hello,24);">
-<input type="button" value="End Unordered List" style="width:49%" onClick="AddText(hello,25);">
+<input type="Button" value="Ordered List" style="width:48%" onClick="AddText(hello,27);">
+<input type="button" value="End Or List" style="width:48%" onClick="AddText(hello,28);">
+<input type="button" value="Unordered List" style="width:48%" onClick="AddText(hello,24);">
+<input type="button" value="End Un List" style="width:48%" onClick="AddText(hello,25);">
 			      </div></div>
 			    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 
-				<a><input type="button" style="border: transparent"><img src="save.png" alt="save code" style="margin-left:20px;margin-top:40px;" width="40px"id="testLink" value="SAVE"/></a>
-				<a><input type="button" style="border: transparent"><img src="run.png" alt="run code" style="margin-left:15px;margin-top:40px;" width="50px" value="RUN" onClick="View(hello);"></a>
+				<a><input type="button" style="border: #f8f8f8;background-color:#f8f8f8"><img src="save.png" alt="save code" style="margin-left:-15px;margin-top:40px;" width="35px"id="testLink" value="SAVE"/></a>
+				<a><input type="button" style="border: #f8f8f8;background-color:#f8f8f8"><img src="run.png" alt="run code" style="margin-left:-10px;margin-top:40px;" width="43px" value="RUN" onClick="View(hello);"></a>
 </div>
 <CENTER>
-	<br style="height:1px">
-	<div class="window" style="height:90%">
+	<br><br>
+<div class="paper">
+    <div class="paper-content">
 			<form id="hello" action="">
-	<textarea name="Text1" id="textareaCode" class="Text1" style=";width:100%;height:510px;background-color:#f3f4f5"><html>
+	<textarea name="Text1" id="textareaCode" class="Text1" style="font-family:Arial;height:480px"><html>
 <body>
 
 <h1>Learn to build websites easy!</h1>
