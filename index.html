@@ -376,8 +376,11 @@ AddTxt+=txt+";\nborder-left: 25px solid transparent;\nborder-right: 25px solid t
 }
 if(Action==10) { 
 txt=prompt("URL for graphic","URL");    
-if(txt!=null)           
-AddTxt="<img src="+txt+">\r\n"; 
+if(txt!=null) {        
+AddTxt="<img src='"+txt+"' style='width:";
+txt=prompt("Select width (with px)","Text");              
+AddTxt+=txt+";'>\r\n\n";  
+	}
 }
 form.Text1.value+=AddTxt;
 }
