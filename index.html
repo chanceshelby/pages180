@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <title>Sheet365</title>
@@ -20,7 +22,7 @@ h1 {
 	font-family: "Lobster", sans-serif;
 }
 body {
-  background: #464646;
+  background: #d1d1d1;
 }
 input {
 	border: 1px solid #000;
@@ -43,7 +45,7 @@ input {
 	    width: 90%;
 	    max-width: 800px;
 	    min-width: 400px;
-	    height: 470px;
+	    height: 520px;
 	    margin: 0 auto;
 	    background: #fff;
 	    border-radius: 10px;
@@ -409,14 +411,14 @@ body {margin:0;font-family:Arial}
 
 .topnav {
   overflow: hidden;
-  background-color: #f8f8f8;
+  background-color: #217346;
   box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: #000;
+  color: #f8f8f8;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -425,7 +427,7 @@ body {margin:0;font-family:Arial}
 
 .active {
   background-color: #fff;
-  color: #000;
+  color: #f8f8f8;
 }
 
 .topnav .icon {
@@ -441,11 +443,10 @@ body {margin:0;font-family:Arial}
   font-size: 19px;    
   border: none;
   outline: none;
-  color: #000;
+  color: #f8f8f8;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
-  margin-top:8px;
 }
 
 .dropdown-content {
@@ -470,11 +471,11 @@ body {margin:0;font-family:Arial}
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-  color: #000;
+  color: #f8f8f8;
 }
 
 .dropdown-content a:hover {
-  background-color: #000;
+  background-color: #f8f8f8;
   color: black;
 }
 
@@ -512,13 +513,16 @@ body {margin:0;font-family:Arial}
     text-align: left;
   }
 }
+#title {
+	font-family: "verdana";
+}
 </style>
 <div class="topnav" id="myTopnav" style="margin-top:-10px">
 		<div class="dropdown">
-			<button class="dropbtn"><img style="width:100px;margin-left:5px" src="final_logo.png">
+			<button class="dropbtn" style="margin-top:11px;margin-left:10px"><small id="title" style="font-size:30px;">Sheet<font color="#d1d1d1">365</font></small></button>
 		</div>
   <div class="dropdown">
-    <button class="dropbtn" style="margin-top:40px;margin-left:-12px">HTML Elements 
+    <button class="dropbtn" style="margin-top:21px;margin-left:20px">HTML Elements 
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
@@ -536,7 +540,7 @@ body {margin:0;font-family:Arial}
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 
   <div class="dropdown">
-    <button class="dropbtn" style="margin-top:40px">Text 
+    <button class="dropbtn" style="margin-top:21px">Text 
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
@@ -554,7 +558,7 @@ Headings<br>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
   
     <div class="dropdown">
-      <button class="dropbtn" style="margin-top:40px">Fonts 
+      <button class="dropbtn" style="margin-top:21px">Fonts 
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
@@ -577,7 +581,7 @@ Fonts
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 	
 	    <div class="dropdown">
-	      <button class="dropbtn" style="margin-top:40px">Page Styling 
+	      <button class="dropbtn" style="margin-top:21px">Page Styling 
 	        <i class="fa fa-caret-down"></i>
 	      </button>
 	      <div class="dropdown-content">
@@ -595,7 +599,7 @@ Media<br>
 	    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 		
 			    <div class="dropdown">
-			      <button class="dropbtn" style="margin-top:40px">Tables & Lists 
+			      <button class="dropbtn" style="margin-top:21px">Tables & Lists 
 			        <i class="fa fa-caret-down"></i>
 			      </button>
 			      <div class="dropdown-content">
@@ -617,7 +621,7 @@ Table Attributes<br>
 			    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 				
 			    <div class="dropdown">
-			      <button class="dropbtn" style="margin-top:40px">Shapes 
+			      <button class="dropbtn" style="margin-top:21px">Shapes 
 			        <i class="fa fa-caret-down"></i>
 			      </button>
 			      <div class="dropdown-content">
@@ -628,15 +632,15 @@ Shapes<br>
 			      </div></div>
 			    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 
-				<a><input type="button" style="border: #f8f8f8;background-color:#f8f8f8"><img src="save.png" alt="save code" style="margin-left:-15px;margin-top:40px;" width="35px"id="testLink" value="SAVE"/></a>
-				<a><input type="button" style="border: #f8f8f8;background-color:#f8f8f8"><img src="run.png" alt="run code" style="margin-left:-10px;margin-top:40px;" width="43px" value="RUN" onClick="View(hello);"></a>
+				<a><input type="button" style="border: #f8f8f8;background-color:transparent"><img src="save_white.png" alt="save code" style="margin-left:10px;margin-top:13px;" width="34px"id="testLink" value="SAVE"/></a>
+				<a><input type="button" style="border: #f8f8f8;background-color:transparent"><img src="run_white.png" alt="run code" style="margin-left:-10px;margin-top:13px;" width="42px" value="RUN" onClick="View(hello);"></a>
 </div>
 <CENTER>
 	<br><br>
 <div class="paper">
     <div class="paper-content">
 			<form id="hello" action="">
-	<textarea name="Text1" id="textareaCode" class="Text1" style="font-family:Arial;height:418px"></textarea>
+	<textarea name="Text1" id="textareaCode" class="Text1" spellcheck="false" style="font-family:Arial;height:448px;resize:none;"></textarea>
 	
 </form>
 
