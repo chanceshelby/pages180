@@ -339,7 +339,7 @@ if(Action==8) AddTxt="<hr>\r\n";
 if(Action==9) {  
 txt=prompt("URL for the link.","http://");      
 if(txt!=null){          
-AddTxt="<a href="+txt+">\r\n";              
+AddTxt="<a href='"+txt+"'";              
 txt=prompt("Text to be show for the link","Text");              
 AddTxt+=txt+"</a>\r\n";         
    }
