@@ -22,7 +22,7 @@ h1 {
 	font-family: "Lobster", sans-serif;
 }
 body {
-  background: #dee1e7;
+  background: #dadde3;
 }
 input {
 	border: 1px solid #d1d1d1;
@@ -49,8 +49,6 @@ input {
 	    height: 520px;
 	    margin: 0 auto;
 	    background: #fff;
-	    border-radius: 10px;
-	    box-shadow: 0 2px 8px rgba(0,0,0,.3);
 	    overflow: hidden;
 	}
 	/*.paper:before {
@@ -412,14 +410,13 @@ body {margin:0;font-family:Arial}
 
 .topnav {
   overflow: hidden;
-  background-color: #217346;
-  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  background-color: #fff;
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: #f8f8f8;
+  color: #3f4042;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -428,7 +425,7 @@ body {margin:0;font-family:Arial}
 
 .active {
   background-color: #fff;
-  color: #f8f8f8;
+  color: #3f4042;
 }
 
 .topnav .icon {
@@ -444,7 +441,7 @@ body {margin:0;font-family:Arial}
   font-size: 19px;    
   border: none;
   outline: none;
-  color: #f8f8f8;
+  color: #3f4042;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -472,11 +469,11 @@ body {margin:0;font-family:Arial}
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-  color: #f8f8f8;
+  color: #000;
 }
 
 .dropdown-content a:hover {
-  background-color: #f8f8f8;
+  background-color: #000;
   color: black;
 }
 
@@ -519,9 +516,9 @@ body {margin:0;font-family:Arial}
 }
 </style>
 <font color="#3f4042">
-<div class="topnav" id="myTopnav" style="margin-top:-13px">
+<div class="topnav" id="myTopnav" style="margin-top:-15px;">
 		<div class="dropdown">
-			<button class="dropbtn" style="margin-top:11px;margin-left:63px"><small id="title" style="font-size:30px;">Pages<font color="#c7ceff">180</font></small></button>
+			<button class="dropbtn" style="margin-top:11px;margin-left:64px"><small id="title" style="font-size:30px;">Pages<font color="#9499ff">180</font></small></button>
 		</div>
   <div class="dropdown">
     <button class="dropbtn" style="margin-top:21px;margin-left:20px;">HTML Elements 
@@ -594,7 +591,7 @@ Fonts<center>
 <input type="Button" value="Background Color" style="width:100%" onClick="AddText(hello,23);">
 <input type="button" value="Page Break" style="width:100%" onClick="AddText(hello,7);">
 <input type="button" value="Horizontal Line" style="width:100%" onClick="AddText(hello,8);">
-<input type="button" value="Add Custom CSS" style="width:100%;background-color:#c7ceff;" onClick="AddText(hello,21);">
+<input type="button" value="Add Custom CSS" style="width:100%;background-color:#9499ff;color:#fff" onClick="AddText(hello,21);">
 <input type="Button" value="Center" style="width:48%" onClick="AddText(hello,11);">
 <input type="Button" value="Closing Tag" style="width:48%" onClick="AddText(hello,12);">
 </center>
@@ -638,9 +635,18 @@ Table Attributes<br><center>
 <input type="button" value="Triangle" style="width:100%" onClick="AddText(hello,53);">
 			      </div></div>
 			    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+				
+							    <div class="dropdown">
+							      <button class="dropbtn" style="margin-top:21px">File 
+							        <i class="fa fa-caret-down"></i>
+							      </button>
+							      <div class="dropdown-content">
+				</center>File<br><center>
+					<input type="button" style="width:100%" value="Run" onClick="View(hello);">
+					<input type="button" style="width:100%" value="Save" id="testLink"/>
+							      </div></div>
+							    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 
-				<a><input type="button" style="border: #f8f8f8;background-color:transparent"><img src="save_white.png" alt="save code" style="margin-left:10px;margin-top:13px;" width="32px"id="testLink" value="SAVE"/></a>
-				<a><input type="button" style="border: #f8f8f8;background-color:transparent"><img src="run_white1.png" alt="run code" style="margin-left:-10px;margin-top:17px;" width="30px" value="RUN" onClick="View(hello);"></a>
 </div>
 <CENTER>
 	<br><br>
