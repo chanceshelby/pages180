@@ -139,7 +139,7 @@ input {
 		float:left;
 	    position: relative;
 		width:35%;
-	    height: 500px;
+	    height: 100%;
 	    margin: 0 auto;
 	    background: #fff;
 	    overflow: hidden;
@@ -721,14 +721,14 @@ Table Attributes<br><center>
 
 </div>
 	<br><br>
-	<div class="paper">
-	    <div class="paper-content">
-			<form id="hello" action="">
+	<div class="paper" style="height:80%">
+	    <div class="paper-content" style="height:100%">
+			<form id="hello" action="" style="height:100%">
 				
-  <div id="textareacontainer">
-    <div id="textarea">
-      <div id="textareawrapper">
-        <textarea autocomplete="off" id="textareaCode"  style="height:448px;resize: none;" spellcheck="false">
+  <div id="textareacontainer" style="height:90%">
+    <div id="textarea" style="height:100%">
+      <div id="textareawrapper" style="height:100%">
+        <textarea autocomplete="off" id="textareaCode"  style="height:100%;resize: none;" spellcheck="false">
 </textarea>
 </form>
 
@@ -736,8 +736,11 @@ Table Attributes<br><center>
 	iframe {
 		background-color:#fff;
 		width:65%;
-		height:500px;
+		height:80%;
 		border-left:3px solid #000;
+	}
+	textarea {
+		height: 80%;
 	}
 </style>
 
