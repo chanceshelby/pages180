@@ -1,4 +1,89 @@
+	<style>
+	    #menu{
+	    position:absolute;
+	    width:125px;
+	    border:transparent;
+	    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+	    line-height:20px;
+	    cursor:default;
+	    visibility:hidden;
+	    border-top-left-radius: 6px;
+	    border-top-right-radius: 6px;
+	    border-bottom-left-radius: 6px;
+	    border-bottom-right-radius: 6px;
+	   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+	   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+	    background-color: transparent;
+		z-index:1;
+	    }
+	    #menuitems{
+	    padding-left:15px;
+	    padding-right:15px;
+	    }
+	    #menu:before {
+	  
+	  }
+		</style>
+	<!-- menu code -->
 
+<script language="JavaScript1.2">
+//set this variable to 1 if you wish the URLs of the highlighted menu to be displayed in the status bar
+var display_url=1
+function showmenu(){
+var rightedge=document.body.clientWidth-event.clientX
+var bottomedge=document.body.clientHeight-event.clientY
+
+if (rightedge<menu.offsetWidth)
+menu.style.left=document.body.scrollLeft+event.clientX-menu.offsetWidth
+else
+menu.style.left=document.body.scrollLeft+event.clientX
+
+if (bottomedge<menu.offsetHeight)
+menu.style.top=document.body.scrollTop+event.clientY-menu.offsetHeight
+else
+menu.style.top=document.body.scrollTop+event.clientY
+
+menu.style.visibility="visible"
+return false
+}
+
+function hidemenu(){
+menu.style.visibility="hidden"
+}
+
+function over(){
+if (event.srcElement.className=="menuitems"){
+event.srcElement.style.backgroundColor="highlight"
+event.srcElement.style.color="black"
+if (display_url==1)
+window.status=event.srcElement.url
+}
+}
+
+function out(){
+if (event.srcElement.className=="menuitems"){
+event.srcElement.style.backgroundColor=""
+event.srcElement.style.color="black"
+window.status=''
+}
+}
+
+function linkTo(){
+if (event.srcElement.className=="menuitems")
+window.location=event.srcElement.url
+}
+</script>
+
+	<script language="JavaScript1.2">
+	document.oncontextmenu=showmenu
+	if (document.all&&window.print)
+	document.body.onclick=hidemenu()
+	</script>
+
+	<div id="menu" onMouseover="over()" onMouseout="out()" onClick="linkTo()">
+					  <div><button id="myCheck" style="font-size:16px" onclick="submitTryit(1);ga('send', 'event', 'runCode', 'click');snhb.queue.push(function(){googletag.pubads().setTargeting('page_section',(function () {var folder = location.pathname;folder = folder.replace('/', ''); folder = folder.substr(0, folder.indexOf('/')); return folder + 'tryitUA'; })());snhb.startAuction(['try_it_leaderboard']);});">Run</button></div>
+					<div><input type="button" style="width:100%" value="Save" id="testLink"/></div>
+	</div>
 
 <!DOCTYPE html>
 <html>
@@ -24,6 +109,16 @@ h1 {
 body {
   background: #dadde3;
 }
+button {
+	border: 1px solid #d1d1d1;
+	background-color: #fff;
+	color:#000;
+	cursor: pointer;
+	margin: 1px;
+	border-radius: 5px;
+	text-align:center;
+	width:100%;
+}
 input {
 	border: 1px solid #d1d1d1;
 	background-color: #fff;
@@ -43,11 +138,10 @@ input {
 .Text1 {
 	}
 	.paper {
+		float:left;
 	    position: relative;
-	    width: 90%;
-	    max-width: 1300px;
-	    min-width: 1300px;
-	    height: 520px;
+		width:35%;
+	    height: 500px;
 	    margin: 0 auto;
 	    background: #fff;
 	    overflow: hidden;
@@ -97,29 +191,6 @@ input {
 	footer a {
 	    color: rgba(255,255,255,.8);
 	}
-}
-  #menu{
-  position:absolute;
-  width:125px;
-  border:solid 1px #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-  line-height:20px;
-  cursor:default;
-  visibility:hidden;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
- text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
- box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
-  background: linear-gradient(to top, #cccccc 0%, #d6d6d6 1px, #ebebeb 100%);
-  }
-  #menuitems{
-  padding-left:15px;
-  padding-right:15px;
-  }
-  #menu:before {
-	  
 }
 </style>
 
@@ -383,7 +454,7 @@ txt=prompt("Select width (with px)","Text");
 AddTxt+=txt+";'>\r\n\n";  
 	}
 }
-form.Text1.value+=AddTxt;
+form.textareaCode.value+=AddTxt;
 }
 function ResetPage(form) {
 if(confirm("Reset the page?")) { 
@@ -530,7 +601,7 @@ body {margin:0;font-family:Arial}
     <div class="dropdown-content">
 	Page Elements<br>
 	<center>
-	<input type="Button" value="HTML Tag" style="width:48%;" onClick="AddText(hello,35);">
+<input type="Button" value="HTML Tag" style="width:48%;" onClick="AddText(hello,35);">
 	<input type="Button" value="Closing Tag" style="width:48%;" onClick="AddText(hello,36);">
 	<input type="Button" value="Declare Header" style="width:48%;" onClick="AddText(hello,38);">
     <input type="Button" value="Closing Tag" style="width:48%;" onClick="AddText(hello,39);">
@@ -645,18 +716,50 @@ Table Attributes<br><center>
 							      </button>
 							      <div class="dropdown-content">
 				</center>File<br><center>
-					<input type="button" style="width:100%" value="Run" onClick="View(hello);">
+					  <button id="myCheck" style="font-size:16px" onclick="submitTryit(1);ga('send', 'event', 'runCode', 'click');snhb.queue.push(function(){googletag.pubads().setTargeting('page_section',(function () {var folder = location.pathname;folder = folder.replace('/', ''); folder = folder.substr(0, folder.indexOf('/')); return folder + 'tryitUA'; })());snhb.startAuction(['try_it_leaderboard']);});">Run</button>
 					<input type="button" style="width:100%" value="Save" id="testLink"/>
 							      </div></div>
 							    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 
 </div>
-<CENTER>
 	<br><br>
-<div class="paper">
-    <div class="paper-content">
+	<div class="paper">
+	    <div class="paper-content">
 			<form id="hello" action="">
-	<textarea name="Text1" id="textareaCode" class="Text1" spellcheck="false" style="font-family:Arial;height:448px;resize:none;"></textarea>
+				
+  <div id="textareacontainer">
+    <div id="textarea">
+      <div id="textareawrapper">
+        <textarea autocomplete="off" id="textareaCode" style="height:448px" spellcheck="false">
+</textarea>
+</form>
+
+<style>
+	iframe {
+		background-color:#fff;
+		width:65%;
+		height:500px;
+		border-left:3px solid #000;
+	}
+</style>
+
+
+
+        <form id="codeForm" autocomplete="off" style="margin:0px;display:none;">
+          <input type="hidden" name="code" id="code" style="" />
+        </form>
+       </div>
+    </div>
+  </div>
+</div></div>
+  <div id="iframecontainer" style="">
+    <div id="iframe" style="">
+    <div id="iframewrapper"  style="">
+    </div>
+  </div>
+</div>
+</div>
+
 </font>
 </form>
 
@@ -708,5 +811,632 @@ Table Attributes<br><center>
 	  } else {
 	    x.className = "topnav1";
 	  }
+	}
+	</script>
+	
+
+	<link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+	<link rel="stylesheet" href="/w3css/4/w3.css">
+	<link rel="stylesheet" href="/lib/codemirror.css">
+	<script src="/lib/codemirror.js"></script>
+	<script src="/lib/codemirror_jsx.js"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-3855518-1', 'auto');
+	  ga('require', 'displayfeatures');
+	  ga('send', 'pageview');
+	</script>
+
+	<script src="//snigelweb-com.videoplayerhub.com/videoloader.js" async></script>
+
+	<script type='text/javascript'>
+	var k42 = false;
+	var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+
+	k42 = true;
+	googletag.cmd.push(function() { googletag.pubads().setTargeting("page_section",(function () {
+	    var folder = location.pathname;
+	    folder = folder.replace("/", "");
+	    folder = folder.substr(0, folder.indexOf("/"));
+	    return folder + "tryit";
+	  })());
+	});  
+	(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1;
+
+	var snhb = snhb || {}; snhb.queue = snhb.queue || [];
+	snhb.options = {
+	               logOutputEnabled : false,
+	               autoStartAuction: false,
+	               gdpr: {
+	                     mainGeo: "us",
+	                     reconsiderationAppealIntervalSeconds: 0
+	                     }
+	               };
+
+	</script>
+	<script src="//static.h-bid.com/sncmp/latest/sncmp_stub.min.js" type="text/javascript"></script>
+	<script>
+				window.__cmp('setLogo', "//www.w3schools.com/images/w3schoolscom_gray.gif", function(result){
+		       		snhb.console.log("Logo set");
+		    	});
+				window.__cmp('setPrivacyPolicy', "//www.w3schools.com/about/about_privacy.asp", function(result){
+		       		snhb.console.log("Privacy policy URI set");
+		    	});
+				__cmp('forceLocale', 'en', function(result){
+		    });
+				window.__cmp('enableWelcomeBanner', null, function(result) {
+		       		snhb.console.log("Banner mode enabled");
+				});
+				__cmp('enablePopupDismissable', null, function(result) {});
+				window.__cmp('disableBannerPrivacyPolicyButton', null, function(result) {
+		       		snhb.console.log("Banner mode without privacy policy button enabled");
+				});
+	      window.__cmp('setTranslationFiles', { path: '//www.w3schools.com/lib/', locales: ["en"] }, function(result) {});
+	      __cmp('setCSS', '//www.w3schools.com/lib/cmp.css', function(result){} );
+	</script>
+	<script async type="text/javascript" src="//static.h-bid.com/w3schools.com/20200121/snhb-w3schools.com.min.js"></script>
+	<script>
+	  snhb.queue.push(function(){
+
+	    snhb.startAuction(["try_it_leaderboard"]);
+
+	   });
+	</script>
+	<script>
+	if (window.addEventListener) {              
+	    window.addEventListener("resize", browserResize);
+	} else if (window.attachEvent) {                 
+	    window.attachEvent("onresize", browserResize);
+	}
+	var xbeforeResize = window.innerWidth;
+
+	function browserResize() {
+	    var afterResize = window.innerWidth;
+	    if ((xbeforeResize < (970) && afterResize >= (970)) || (xbeforeResize >= (970) && afterResize < (970)) ||
+	        (xbeforeResize < (728) && afterResize >= (728)) || (xbeforeResize >= (728) && afterResize < (728)) ||
+	        (xbeforeResize < (468) && afterResize >= (468)) ||(xbeforeResize >= (468) && afterResize < (468))) {
+	        xbeforeResize = afterResize;
+        
+	        snhb.queue.push(function(){  snhb.startAuction(["try_it_leaderboard"]); });
+         
+	    }
+	    if (window.screen.availWidth <= 768) {
+	      restack(window.innerHeight > window.innerWidth);
+	    }
+	    fixDragBtn();
+	    showFrameSize();    
+	}
+	var fileID = "";
+	var loadSave = false;
+	function getSavedFile() {
+	    loadSave = true;
+	    var htmlCode;
+	    var paramObj = {};
+	    paramObj.fileid = "";
+	    fileID = paramObj.fileid;
+	    var paramA = JSON.stringify(paramObj);
+	    var httpA = new XMLHttpRequest();
+	    httpA.open("POST", globalURL, true);
+	    httpA.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	    httpA.onreadystatechange = function() {
+	        if(httpA.readyState == 4 && httpA.status == 200) {
+	            document.getElementById("textareaCode").value = httpA.responseText;
+	            window.editor.getDoc().setValue(httpA.responseText);
+	            loadSave = false;
+	        }
+	    }
+	    httpA.send(paramA);   
+	}
+	</script>
+	
+	<script>
+	submitTryit()
+
+	function submitTryit(n) {
+	  if (window.editor) {
+	    window.editor.save();
+	  }
+	  var text = document.getElementById("textareaCode").value;
+	  var ifr = document.createElement("iframe");
+	  ifr.setAttribute("frameborder", "0");
+	  ifr.setAttribute("id", "iframeResult");
+	  ifr.setAttribute("name", "iframeResult");  
+	  ifr.setAttribute("allowfullscreen", "true");  
+	  document.getElementById("iframewrapper").innerHTML = "";
+	  document.getElementById("iframewrapper").appendChild(ifr);
+	  if (loadSave == true ) {
+	    ifr.setAttribute("src", "/code/opentext.htm");
+	  } else if (fileID != "" && loadSave == false) {
+	    var t=text;
+	    t=t.replace(/=/gi,"w3equalsign");
+	    t=t.replace(/\+/gi,"w3plussign");    
+	    var pos=t.search(/script/i)
+	    while (pos>0) {
+	      t=t.substring(0,pos) + "w3" + t.substr(pos,3) + "w3" + t.substr(pos+3,3) + "tag" + t.substr(pos+6);
+		    pos=t.search(/script/i);
+	    }
+	    document.getElementById("code").value=t;
+	    document.getElementById("codeForm").action = "https://tryit.w3schools.com/tryit_view.php?x=" + Math.random();
+	    document.getElementById('codeForm').method = "post";
+	    document.getElementById('codeForm').acceptCharset = "utf-8";
+	    document.getElementById('codeForm').target = "iframeResult";
+	    document.getElementById("codeForm").submit();
+	  } else {
+	    var ifrw = (ifr.contentWindow) ? ifr.contentWindow : (ifr.contentDocument.document) ? ifr.contentDocument.document : ifr.contentDocument;
+	    ifrw.document.open();
+	    ifrw.document.write(text);  
+	    ifrw.document.close();
+	    //23.02.2016: contentEditable is set to true, to fix text-selection (bug) in firefox.
+	    //(and back to false to prevent the content from being editable)
+	    //(To reproduce the error: Select text in the result window with, and without, the contentEditable statements below.)  
+	    if (ifrw.document.body && !ifrw.document.body.isContentEditable) {
+	      ifrw.document.body.contentEditable = true;
+	      ifrw.document.body.contentEditable = false;
+	    }
+	  }
+	}
+	var currentStack=true;
+	if ((window.screen.availWidth <= 768 && window.innerHeight > window.innerWidth) || "" == " horizontal") {restack(true);}
+	function restack(horizontal) {
+	    var tc, ic, t, i, c, f, sv, sh, d, height, flt, width;
+	    tc = document.getElementById("textareacontainer");
+	    ic = document.getElementById("iframecontainer");
+	    t = document.getElementById("textarea");
+	    i = document.getElementById("iframe");
+	    c = document.getElementById("container");    
+	    sv = document.getElementById("stackV");
+	    sh = document.getElementById("stackH");
+	    tc.className = tc.className.replace("horizontal", "");
+	    ic.className = ic.className.replace("horizontal", "");        
+	    t.className = t.className.replace("horizontal", "");        
+	    i.className = i.className.replace("horizontal", "");        
+	    c.className = c.className.replace("horizontal", "");                        
+	    if (sv) {sv.className = sv.className.replace("horizontal", "")};
+	    if (sv) {sh.className = sh.className.replace("horizontal", "")};
+	    stack = "";
+	    if (horizontal) {
+	        tc.className = tc.className + " horizontal";
+	        ic.className = ic.className + " horizontal";        
+	        t.className = t.className + " horizontal";        
+	        i.className = i.className + " horizontal";                
+	        c.className = c.className + " horizontal";                
+	        if (sv) {sv.className = sv.className + " horizontal"};
+	        if (sv) {sh.className = sh.className + " horizontal"};
+	        stack = " horizontal";
+	        document.getElementById("textareacontainer").style.height = "50%";
+	        document.getElementById("iframecontainer").style.height = "50%";
+	        document.getElementById("textareacontainer").style.width = "100%";
+	        document.getElementById("iframecontainer").style.width = "100%";
+	        currentStack=false;
+	    } else {
+	        document.getElementById("textareacontainer").style.height = "100%";
+	        document.getElementById("iframecontainer").style.height = "100%";
+	        document.getElementById("textareacontainer").style.width = "50%";
+	        document.getElementById("iframecontainer").style.width = "50%";
+	        currentStack=true;        
+	    }
+	    fixDragBtn();
+	    showFrameSize();
+	}
+	function showFrameSize() {
+	  var t;
+	  var width, height;
+	  width = Number(w3_getStyleValue(document.getElementById("iframeResult"), "width").replace("px", "")).toFixed();
+	  height = Number(w3_getStyleValue(document.getElementById("iframeResult"), "height").replace("px", "")).toFixed();
+	  document.getElementById("framesize").innerHTML = "Result Size: <span>" + width + " x " + height + "</span>";
+	}
+	var dragging = false;
+	var stack;
+	function fixDragBtn() {
+	  var textareawidth, leftpadding, dragleft, containertop, buttonwidth
+	  var containertop = Number(w3_getStyleValue(document.getElementById("container"), "top").replace("px", ""));
+	  if (stack != " horizontal") {
+	    document.getElementById("dragbar").style.width = "5px";    
+	    textareasize = Number(w3_getStyleValue(document.getElementById("textareawrapper"), "width").replace("px", ""));
+	    leftpadding = Number(w3_getStyleValue(document.getElementById("textarea"), "padding-left").replace("px", ""));
+	    buttonwidth = Number(w3_getStyleValue(document.getElementById("dragbar"), "width").replace("px", ""));
+	    textareaheight = w3_getStyleValue(document.getElementById("textareawrapper"), "height");
+	    dragleft = textareasize + leftpadding + (leftpadding / 2) - (buttonwidth / 2);
+	    document.getElementById("dragbar").style.top = containertop + "px";
+	    document.getElementById("dragbar").style.left = dragleft + "px";
+	    document.getElementById("dragbar").style.height = textareaheight;
+	    document.getElementById("dragbar").style.cursor = "col-resize";
+    
+	  } else {
+	    document.getElementById("dragbar").style.height = "5px";
+	    if (window.getComputedStyle) {
+	        textareawidth = window.getComputedStyle(document.getElementById("textareawrapper"),null).getPropertyValue("height");
+	        textareaheight = window.getComputedStyle(document.getElementById("textareawrapper"),null).getPropertyValue("width");
+	        leftpadding = window.getComputedStyle(document.getElementById("textarea"),null).getPropertyValue("padding-top");
+	        buttonwidth = window.getComputedStyle(document.getElementById("dragbar"),null).getPropertyValue("height");
+	    } else {
+	        dragleft = document.getElementById("textareawrapper").currentStyle["width"];
+	    }
+	    textareawidth = Number(textareawidth.replace("px", ""));
+	    leftpadding = Number(leftpadding .replace("px", ""));
+	    buttonwidth = Number(buttonwidth .replace("px", ""));
+	    dragleft = containertop + textareawidth + leftpadding + (leftpadding / 2);
+	    document.getElementById("dragbar").style.top = dragleft + "px";
+	    document.getElementById("dragbar").style.left = "5px";
+	    document.getElementById("dragbar").style.width = textareaheight;
+	    document.getElementById("dragbar").style.cursor = "row-resize";        
+	  }
+	}
+	function dragstart(e) {
+	  e.preventDefault();
+	  dragging = true;
+	  var main = document.getElementById("iframecontainer");
+	}
+	function dragmove(e) {
+	  if (dragging) 
+	  {
+	    document.getElementById("shield").style.display = "block";        
+	    if (stack != " horizontal") {
+	      var percentage = (e.pageX / window.innerWidth) * 100;
+	      if (percentage > 5 && percentage < 98) {
+	        var mainPercentage = 100-percentage;
+	        document.getElementById("textareacontainer").style.width = percentage + "%";
+	        document.getElementById("iframecontainer").style.width = mainPercentage + "%";
+	        fixDragBtn();
+	      }
+	    } else {
+	      var containertop = Number(w3_getStyleValue(document.getElementById("container"), "top").replace("px", ""));
+	      var percentage = ((e.pageY - containertop + 20) / (window.innerHeight - containertop + 20)) * 100;
+	      if (percentage > 5 && percentage < 98) {
+	        var mainPercentage = 100-percentage;
+	        document.getElementById("textareacontainer").style.height = percentage + "%";
+	        document.getElementById("iframecontainer").style.height = mainPercentage + "%";
+	        fixDragBtn();
+	      }
+	    }
+	    showFrameSize();    
+	  }
+	}
+	function dragend() {
+	  document.getElementById("shield").style.display = "none";
+	  dragging = false;
+	  var vend = navigator.vendor;
+	  if (window.editor && vend.indexOf("Apple") == -1) {
+	      window.editor.refresh();
+	  }
+	}
+	if (window.addEventListener) {              
+	  document.getElementById("dragbar").addEventListener("mousedown", function(e) {dragstart(e);});
+	  document.getElementById("dragbar").addEventListener("touchstart", function(e) {dragstart(e);});
+	  window.addEventListener("mousemove", function(e) {dragmove(e);});
+	  window.addEventListener("touchmove", function(e) {dragmove(e);});
+	  window.addEventListener("mouseup", dragend);
+	  window.addEventListener("touchend", dragend);
+	  window.addEventListener("load", fixDragBtn);
+	  window.addEventListener("load", showFrameSize);
+	}
+	function click_savebtn() {
+	  if (window.editor) {
+	    window.editor.save();
+	  }
+	  document.getElementById('saveModal').style.display = 'block';
+	}
+	function click_google_savebtn() {
+	  if (window.editor) {
+	    window.editor.save();
+	  }
+	  document.getElementById('driveSaveModal').style.display='block'
+	}
+
+	function click_google_loadbtn() {
+	  document.getElementById('driveLoadModal').style.display='block'
+	}
+	function retheme() {
+	  var cc = document.body.className;
+	  if (cc.indexOf("darktheme") > -1) {
+	    document.body.className = cc.replace("darktheme", "");
+	    if (opener) {opener.document.body.className = cc.replace("darktheme", "");}
+	    localStorage.setItem("preferredmode", "light");
+	  } else {
+	    document.body.className += " darktheme";
+	    if (opener) {opener.document.body.className += " darktheme";}
+	    localStorage.setItem("preferredmode", "dark");
+	  }
+	}
+	(
+	function setThemeMode() {
+	  var x = localStorage.getItem("preferredmode");
+	  if (x == "dark") {
+	    document.body.className += " darktheme";
+	  }
+	})();
+	function colorcoding() {
+	  var ua = navigator.userAgent;
+	  //Opera Mini refreshes the page when trying to edit the textarea.
+	  if (ua && ua.toUpperCase().indexOf("OPERA MINI") > -1) { return false; }
+	  window.editor = CodeMirror.fromTextArea(document.getElementById("textareaCode"), {
+	    mode: "text/html",
+	    htmlMode: true,
+	    lineWrapping: true,
+	    smartIndent: false,
+	    addModeClass: true
+	  });
+	//  window.editor.on("change", function () {window.editor.save();});
+	}
+	colorcoding();
+
+	function w3_getStyleValue(elmnt,style) {
+	    if (window.getComputedStyle) {
+	        return window.getComputedStyle(elmnt,null).getPropertyValue(style);
+	    } else {
+	        return elmnt.currentStyle[style];
+	    }
+	}
+	//SAVE AND OPEN SCRIPT
+	var oauthToken;
+	var userAction;
+	var pickerApiLoaded;
+	var developerKey = 'AIzaSyAMZDPXiGcCNWs1UCWG9LS6kkW5YiABfJ0';
+	var CLIENT_ID = '451843133508-ckbr5r6ch1ofqbmh87oll4u6ltinqv2t.apps.googleusercontent.com';
+	var SCOPES = ['https://www.googleapis.com/auth/drive.file'];
+
+	//Check if current user has authorized this application
+	function checkAuth() {
+	    gapi.auth.authorize(
+	    {
+	        'client_id': CLIENT_ID,
+	        'scope': SCOPES.join(' '),
+	        'immediate': true
+	    }, handleAuthResult);
+	}
+
+	//Handle response from authorization server
+	function handleAuthResult(authResult) {
+	    if (authResult && !authResult.error) {
+	        oauthToken = authResult.access_token;
+	        loadApi();
+	    }
+	}
+
+	// Initiate auth flow in response to user clicking authorize button
+	function handleAuthClick(event,userClick) {
+	    userAction = userClick;
+	    gapi.auth.authorize(
+	        {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+	        handleAuthResult);
+	    return false;
+	}
+
+	// Load API library
+	function loadApi() {
+	    gapi.client.load('drive', 'v3');
+	    gapi.load('picker', {'callback': onPickerApiLoad});
+	}
+	function onPickerApiLoad() {
+	    pickerApiLoaded = true;
+	    if (userAction=="save") {
+	        userAction="";
+	        document.getElementById('driveText').style.display='none';
+	        document.getElementById('driveSavedPanel').style.display='block';
+	        createFileWithHTMLContent(document.getElementById('googleFileName').value,document.getElementById('textareaCode').value)     
+	    }
+	    if (userAction=="open") {
+	        userAction="";
+	        createPicker();
+	    }
+	}
+
+	// Create and render a Picker object for picking HTML file
+	function createPicker() {
+	    if (pickerApiLoaded) {
+	        var view = new google.picker.View(google.picker.ViewId.DOCS);
+	        view.setMimeTypes("text/html");
+	        var picker = new google.picker.PickerBuilder().
+	            addView(view).
+	            setOAuthToken(oauthToken).
+	            setDeveloperKey(developerKey).
+	            setCallback(pickerCallback).
+	            build();
+	        picker.setVisible(true);
+	    }
+	}
+	// Put content of file in tryit editor
+	function pickerCallback(data) {
+	    var docID = '';
+	    if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
+	        var doc = data[google.picker.Response.DOCUMENTS][0];
+	        docID = doc[google.picker.Document.ID];
+	        getContentOfFile(docID);
+	    }
+	}
+
+	//Get contents
+	function getContentOfFile(theID){
+	    gapi.client.request({'path': '/drive/v3/files/'+theID+'?alt=media&key='+developerKey,'method': 'GET',callback: function ( theResponseJS, theResponseTXT ) {
+	        var myToken = gapi.auth.getToken();
+	        var code = JSON.parse(theResponseTXT);
+	        code = code.gapiRequest.data.body;
+	        document.getElementById("textareaCode").value=code;
+	        window.editor.getDoc().setValue(code);
+	        submitTryit(1);
+	        resetDriveLoadModal();
+	        }
+	    });
+	}
+
+	var createFileWithHTMLContent = function(name,data,callback) {
+	    const boundary = '-------314159265358979323846';
+	    const delimiter = "\r\n--" + boundary + "\r\n";
+	    const close_delim = "\r\n--" + boundary + "--";
+	    const contentType = 'text/html';
+
+	    var metadata = {
+	        'name': name,
+	        'mimeType': contentType
+	    };
+
+	    var multipartRequestBody =
+	        delimiter +
+	        'Content-Type: application/json\r\n\r\n' +
+	        JSON.stringify(metadata) +
+	        delimiter +
+	        'Content-Type: ' + contentType + '\r\n\r\n' +
+	        data +
+	        close_delim;
+
+	    var request = gapi.client.request({
+	        'path': '/upload/drive/v3/files',
+	        'method': 'POST',
+	        'params': {'uploadType': 'multipart'},
+	        'headers': {
+	            'Content-Type': 'multipart/related; boundary="' + boundary + '"'
+	        },
+	        'body': multipartRequestBody});
+	    if (!callback) {
+	        callback = function(file) {
+	            console.log(file);
+	            document.getElementById("driveSavedText").innerHTML = file.name + " saved in Google Drive";
+	            document.getElementById("driveSavedPanel").className = "w3-panel w3-large";
+	        };
+	    }
+	    request.execute(callback);
+	}
+
+	if (navigator.userAgent.indexOf("MSIE") > 0 || navigator.userAgent.indexOf("Edge") > 0) {
+	    document.getElementById("saveGDriveBtn").style.display = "none";
+	    document.getElementById("loadGDriveBtn").style.display = "none";
+	}
+
+
+	function resetDriveSaveModal() {
+	    document.getElementById('driveSavedText').innerHTML='';
+	    document.getElementById('driveSaveModal').style.display='none'
+	    document.getElementById('driveSavedPanel').style.display='none'
+	    document.getElementById('driveText').style.display='block'
+	    document.getElementById("driveSavedPanel").className = "w3-panel w3-large loader";
+	}
+	function resetDriveLoadModal() {
+	    document.getElementById('driveLoadModal').style.display='none'
+	}
+
+	function saveFile(code) {
+	    document.getElementById('preSave').style.display='none';
+	    if (code.length>20000) {
+	        document.getElementById('errorSave').style.display='block';    
+	        return;
+	    }
+	    document.getElementById('postSave').style.display='block';    
+	    var paramObj = {};
+	    paramObj.code = code;
+	    var paramB = JSON.stringify(paramObj);
+	    var httpB = new XMLHttpRequest();
+	    httpB.open("POST", globalURL, true);
+
+	    httpB.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+	    httpB.onreadystatechange = function() {
+	    if(httpB.readyState == 4 && httpB.status == 200) {
+	        if(httpB.responseText.substr(0,2) == "OK" ) {
+	          var getId = httpB.responseText.substr(2);
+	          document.getElementById("shareLink").href = "/code/tryit.asp?filename=" + getId;
+	          document.getElementById("shareLinkText").innerHTML = "https://www.w3schools.com/code/tryit.asp?filename=" + getId;
+	          document.getElementById('saveLoader').style.display = "none";
+	          document.getElementById("saveModalSaved").style.display  = "block";
+	        }
+	    }
+	    }
+	    httpB.send(paramB);
+	}
+	function hideAndResetModal() {
+	    document.getElementById("saveModal").style.display = "none";
+	    document.getElementById('preSave').style.display = "block";
+	    document.getElementById('errorSave').style.display = "none";    
+	    document.getElementById('postSave').style.display = "none";
+	    document.getElementById("saveModalSaved").style.display = "none";
+	    document.getElementById('saveDisclaimer').style.display= "none";
+	    document.getElementById('saveLoader').style.display = "block";
+	}
+
+	var addr = document.location.href;
+	function displayError() {
+	  document.getElementById("err_url").value = addr;
+	  document.getElementById("err_form").style.display = "block";
+	  document.getElementById("err_email").focus();
+	  hideSent();
+	}
+	function hideError() {
+	  document.getElementById("err_form").style.display = "none";
+	}
+	function hideSent() {
+	  document.getElementById("err_sent").style.display = "none";
+	}
+	function sendErr() {
+	  var xmlhttp;
+	  var err_url = document.getElementById("err_url").value;
+	  var err_email = document.getElementById("err_email").value;
+	  var err_desc = document.getElementById("err_desc").value;
+	  if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+	    xmlhttp = new XMLHttpRequest();
+	  } else {// code for IE6, IE5
+	    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	  xmlhttp.open("POST", "/err_sup.asp", true);
+	  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	  xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+	  document.getElementById("err_desc").value = "";
+	  hideError();
+	  document.getElementById("err_sent").style.display = "block";
+	}
+	function openMenu() {
+	    var x = document.getElementById("navbarDropMenu");
+	    var y = document.getElementById("menuOverlay");
+	    var z = document.getElementById("menuButton");
+	    if (z.className.indexOf("w3-text-gray") == -1) {
+	        z.className += " w3-text-gray";
+	    } else { 
+	        z.className = z.className.replace(" w3-text-gray", "");
+	    }
+	    if (z.className.indexOf("w3-gray") == -1) {
+	        z.className += " w3-gray";
+	    } else { 
+	        z.className = z.className.replace(" w3-gray", "");
+	    }
+	    if (x.className.indexOf("w3-show") == -1) {
+	        x.className += " w3-show";
+	    } else { 
+	        x.className = x.className.replace(" w3-show", "");
+	    }
+	    if (y.className.indexOf("w3-show") == -1) {
+	        y.className += " w3-show";
+	    } else { 
+	        y.className = y.className.replace(" w3-show", "");
+	    }
+
+	}
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	    if (event.target == document.getElementById("saveModal")) {
+	        hideAndResetModal();
+	    }
+	    if (event.target == document.getElementById("driveSaveModal")) {
+	        resetDriveSaveModal();
+	    }
+	    if (event.target == document.getElementById("driveLoadModal")) {
+	        resetDriveLoadModal();
+	    }
+	    if (event.target == document.getElementById("menuOverlay")) {
+	        openMenu();
+	    }
+    
+	}
+	</script>
+
+	<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+
+
+	</body>
+	</html>
+	
+	<script>
+	function myFunction12() {
+	  document.getElementById("myCheck").click();
 	}
 	</script>
